@@ -1,27 +1,39 @@
 import { StatusBar } from "expo-status-bar";
-import ViewEffect from "./src/screens/ViewEffect";
-import ViewImages from "./src/screens/ViewImages";
-import ViewPicker from "./src/screens/ViewPicker";
-import ViewState from "./src/screens/ViewState";
+import { useFonts } from "expo-font";
+import { ArchitectsDaughter_400Regular } from '@expo-google-fonts/architects-daughter'
+
 import ViewNav1 from "./src/screens/ViewNav1";
+import ViewTasks from "./src/screens/ViewTasks";
+import ViewLogin from "./src/screens/ViewLogin";
+import ViewUsers from "./src/screens/ViewUsers";
+
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ViewTasks from "./src/screens/ViewTasks";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return (
-    <>
+
+  const [fontsLoaded] = useFonts({
+    'inter-black': require('./src/assets/fonts/Inter-Black.ttf'),
+    'inter-bold': require('./src/assets/fonts/Inter-Bold.ttf'),
+    'Architects': ArchitectsDaughter_400Regular,
+  });
+
+  if(fontsLoaded) {
+
+    return (
+      <>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: true }} >
+        <Stack.Navigator 
+        initialRouteName="ViewLogin"
+        screenOptions={{ headerShown: true }} >
+          <Stack.Screen name="ViewLogin" component={ViewLogin} />
+          <Stack.Screen name="ViewUsers" component={ViewUsers} />
           <Stack.Screen name="ViewNav1" component={ViewNav1} />
-          <Stack.Screen name="ViewState" component={ViewState} />
-          <Stack.Screen name="ViewEffect" component={ViewEffect} />
-          <Stack.Screen name="ViewImages" component={ViewImages} />
-          <Stack.Screen name="ViewPicker" component={ViewPicker} />
           <Stack.Screen name="ViewTasks" component={ViewTasks} />
+
         </Stack.Navigator>
       </NavigationContainer>
 
@@ -31,4 +43,5 @@ export default function App() {
         style="auto" />
     </>
   );
+} 
 }

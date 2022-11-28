@@ -10,24 +10,22 @@ const ViewNav1 = (props) => {
       style={styles.container}>
 
       <CustomButton
+        backgroundColor="#0CF25D"
+        textColor='#fff'
         onPress={() => props.navigation.navigate("ViewTasks")}
         label="Navegar para ViewTasks" />
 
       <CustomButton
-        onPress={() => props.navigation.navigate("ViewPicker")}
-        label="Navegar para ViewPicker" />
+        backgroundColor="#0CF25D"
+        textColor='#fff'
+        onPress={() => props.navigation.navigate("ViewLogin")}
+        label="Navegar para Login" />
 
       <CustomButton
-        onPress={() => props.navigation.navigate("ViewState")}
-        label="Navegar para ViewState" />
-
-      <CustomButton
-        onPress={() => props.navigation.navigate("ViewEffect")}
-        label="Navegar para ViewEffect" />
-
-      <CustomButton
-        onPress={() => props.navigation.navigate("ViewImages")}
-        label="Navegar para ViewImages" />
+        backgroundColor="#0CF25D"
+        textColor='#fff'
+        onPress={() => props.navigation.navigate("ViewUsers")}
+        label="Navegar para ViewUsers" />
 
     </Animatable.View>
   );
@@ -38,7 +36,7 @@ export default ViewNav1;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#275950',
     justifyContent: 'center',
     alignItems: 'center',
   }

@@ -2,7 +2,7 @@ GET https://bartola.hibabys.com.br/api/time
 
 ###
 
-POST http://177.44.248.33/api/users
+POST http://177.44.248.32/api/users
 content-type: application/json
 
 {

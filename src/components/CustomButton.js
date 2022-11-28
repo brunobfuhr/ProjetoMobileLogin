@@ -21,8 +21,9 @@ const styles = StyleSheet.create({
         padding: 8,
     },
     textButton: {
-        color: '#9400d3',
+        color: '#000',
         fontSize: 24,
+        fontFamily:'inter-black',
         textAlign: 'center',
     },
     shadows: {
